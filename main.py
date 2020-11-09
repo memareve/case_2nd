@@ -16,8 +16,10 @@ for month in range(12):
 subject_of_taxation = input('Субъект налогообложения: ').lower().replace(' ', '')
 tax_deduction = float(input('Сумма налогового вычета: '))
 
+# income without tax deduction
 annual_income = annual_income - tax_deduction
 
+# tax for a single entity
 if subject_of_taxation == 'одинсубъект':
     if 0 <= annual_income <= 9075:
         tax = 0.1 * (annual_income - 0)
@@ -44,6 +46,7 @@ if subject_of_taxation == 'одинсубъект':
                     405101 - 186351) + 0.35 * (406751 - 405101) + 0.396 * (annual_income - 406751)
         print('Сумма годового налога составит: ', tax)
 
+# tax for a married couple
 elif subject_of_taxation == 'супружескаяпара':
     if 0 <= annual_income <= 18150:
         tax = 0.1 * (annual_income - 0)
@@ -70,7 +73,8 @@ elif subject_of_taxation == 'супружескаяпара':
                 405101 - 226851) + 0.35 * (457601 - 405101) + 0.396 * (annual_income - 457601)
         print('Сумма годового налога составит: ', tax)
 
-elif subject_of_taxation == 'родитель-одиночка':
+# tax for single parent
+elif subject_of_taxation == 'родитель-одиночка' or 'родительодиночка':
     if 0 <= annual_income <= 12950:
         tax = 0.1 * (annual_income - 0)
         print('Сумма годового налога составит: ', tax)
