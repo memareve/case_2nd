@@ -4,17 +4,20 @@
 # Evdischenko M. ( ).
 
 # calculating_annual_income
-name_month = ['JAN', 'FAB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
+name_month = ['январе', 'феврале', 'марте', 'апреле', 'мае', 'июне', 'июле', 'августе', 'сентябре', 'октябре', 'ноябре',
+              'декабре']
 QUESTION = 'Ваш доход в'
 annual_income = 0
 for month in range(12):
-    print('{} {}:'.format(QUESTION, name_month[month], end=''))
+    print('{} {}:'.format(QUESTION, name_month[month]), end=' ')
     income = float(input())
     annual_income += income
 
 # main questions
-subject_of_taxation = input('Субъект налогообложения: ').lower().replace(' ', '')
 tax_deduction = float(input('Сумма налогового вычета: '))
+subject_of_taxation = input('Субъект налогообложения: ').lower().replace(' ', '')
+if not('одинсубъект' or 'супружескаяпара' or 'родитель-одиночка' or 'родительодиночка'):
+    print('Некорректный ввод субъекта налогообложения.')
 
 # income without tax deduction
 annual_income = annual_income - tax_deduction
@@ -74,7 +77,7 @@ elif subject_of_taxation == 'супружескаяпара':
         print('Сумма годового налога составит: ', tax)
 
 # tax for single parent
-elif subject_of_taxation == 'родитель-одиночка' or 'родительодиночка':
+elif subject_of_taxation == 'родитель-одиночка' or subject_of_taxation == 'родительодиночка':
     if 0 <= annual_income <= 12950:
         tax = 0.1 * (annual_income - 0)
         print('Сумма годового налога составит: ', tax)
