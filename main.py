@@ -35,9 +35,34 @@ if subject_of_taxation == 'одинсубъект':
 
 
 elif subject_of_taxation == 'супружескаяпара':
+    if 0 <= annual_income <= 18150:
+
+    elif 18151 <= annual_income <= 73800:
+
+    elif 73801 <= annual_income <= 148850:
+
+    elif 148851 <= annual_income <= 226850:
+
+    elif 226851 <= annual_income <= 405100:
+
+    elif 405101 <= annual_income <= 457600:
+
+    elif annual_income >= 457601:
 
 
 elif subject_of_taxation == 'родитель-одиночка':
+    if 0 <= annual_income <= 12950:
 
+    elif 12951 <= annual_income <= 49400:
+
+    elif 49401 <= annual_income <= 127550:
+
+    elif 127551 <= annual_income <= 206600:
+
+    elif 206601 <= annual_income <= 405100:
+
+    elif 405101 <= annual_income <= 432200:
+
+    elif annual_income >= 432201:
 
 
