@@ -33,23 +33,11 @@ second, third, fourth, fifth, seventh are variable
 """
 
 if subject_of_taxation == 'одинсубъект':
-    sec = 9075
-    thi = 36900
-    fou = 89350
-    fif = 186350
-    sev = 406750
+    sec, thi, fou, fif, sev = 9075, 36900, 89350, 186350, 406750
 elif subject_of_taxation == 'супружескаяпара':
-    sec = 18150
-    thi = 73800
-    fou = 148850
-    fif = 226850
-    sev = 457600
+    sec, thi, fou, fif, sev = 18150, 73800, 148850, 226850, 457600
 elif subject_of_taxation == 'родитель-одиночка' or subject_of_taxation == 'родительодиночка':
-    sec = 12950
-    thi = 49400
-    fou = 127550
-    fif = 206600
-    sev = 432200
+    sec, thi, fou, fif, sev = 12950, 49400, 127550, 206600, 432200
 
 # calculating the tax amount
 if 0 <= annual_income <= sec:
