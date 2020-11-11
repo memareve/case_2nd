@@ -51,7 +51,7 @@ elif subject_of_taxation == 'родитель-одиночка' or subject_of_ta
     fif = 206600
     sev = 432200
 
-# main
+# calculating the tax amount
 if 0 <= annual_income <= sec:
     tax = 0.10 * annual_income
     print('Сумма годового налога составит: ', tax)
