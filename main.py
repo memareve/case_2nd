@@ -1,7 +1,10 @@
-# Case-study #2
-# Developers: Marinkin O. (33,33333333333333%),
-# Seledtsov A. (33,33333333333333%),
-# Evdischenko M. (53,33333333333333%).
+"""
+Case-study #2
+Developers:
+Marinkin O. (33,33333333333333%),
+Seledtsov A. (33,33333333333333%),
+Evdischenko M. (53,33333333333333%).
+"""
 
 # calculating_annual_income
 name_month = ['январе', 'феврале', 'марте', 'апреле', 'мае', 'июне', 'июле', 'августе', 'сентябре', 'октябре', 'ноябре',
@@ -23,48 +26,53 @@ if not('одинсубъект' or 'супружескаяпара' or 'роди
 # income without tax deduction
 annual_income = annual_income - tax_deduction
 
-# constants for the stage of the tax
+"""
+constants for the stage of the tax
+first (constant stage) = 0, sixth (constant stage) = 405100
+second, third, fourth, fifth, seventh are variable
+"""
+
 if subject_of_taxation == 'одинсубъект':
-    second = 9075
-    third = 36900
-    fourth = 89350
-    fifth = 186350
-    seventh = 406750
+    sec = 9075
+    thi = 36900
+    fou = 89350
+    fif = 186350
+    sev = 406750
 elif subject_of_taxation == 'супружескаяпара':
-    second = 18150
-    third = 73800
-    fourth = 148850
-    fifth = 226850
-    seventh = 457600
+    sec = 18150
+    thi = 73800
+    fou = 148850
+    fif = 226850
+    sev = 457600
 elif subject_of_taxation == 'родитель-одиночка' or subject_of_taxation == 'родительодиночка':
-    second = 12950
-    third = 49400
-    fourth = 127550
-    fifth = 206600
-    seventh = 432200
+    sec = 12950
+    thi = 49400
+    fou = 127550
+    fif = 206600
+    sev = 432200
 
 # main
-if 0 <= annual_income <= second:
+if 0 <= annual_income <= sec:
     tax = 0.10 * annual_income
     print('Сумма годового налога составит: ', tax)
-elif second < annual_income <= third:
-    tax = 0.10 * second + 0.15 * (annual_income - second)
+elif sec < annual_income <= thi:
+    tax = 0.10 * sec + 0.15 * (annual_income - sec)
     print('Сумма годового налога составит: ', tax)
-elif third < annual_income <= fourth:
-    tax = 0.10 * second + 0.15 * (third - second) + 0.25 * (annual_income - third)
+elif thi < annual_income <= fou:
+    tax = 0.10 * sec + 0.15 * (thi - sec) + 0.25 * (annual_income - thi)
     print('Сумма годового налога составит: ', tax)
-elif fourth < annual_income <= fifth:
-    tax = 0.10 * second + 0.15 * (third - second) + 0.25 * (fourth - third) + 0.28 * (annual_income - fourth)
+elif fou < annual_income <= fif:
+    tax = 0.10 * sec + 0.15 * (thi - sec) + 0.25 * (fou - thi) + 0.28 * (annual_income - fou)
     print('Сумма годового налога составит: ', tax)
-elif fifth < annual_income <= 405100:
-    tax = 0.10 * second + 0.15 * (third - second) + 0.25 * (fourth - third) + 0.28 * (fifth - fourth) + 0.33 * (
-            annual_income - fifth)
+elif fif < annual_income <= 405100:
+    tax = 0.10 * sec + 0.15 * (thi - sec) + 0.25 * (fou - thi) + 0.28 * (fif - fou) + 0.33 * \
+          (annual_income - fif)
     print('Сумма годового налога составит: ', tax)
-elif 405101 < annual_income <= seventh:
-    tax = 0.10 * second + 0.15 * (third - second) + 0.25 * (fourth - third) + 0.28 * (fifth - fourth) + 0.33 * (
-                    405101 - fifth) + 0.35 * (annual_income - 405101)
+elif 405100 < annual_income <= sev:
+    tax = 0.10 * sec + 0.15 * (thi - sec) + 0.25 * (fou - thi) + 0.28 * (fif - fou) + 0.33 * \
+          (405100 - fif) + 0.35 * (annual_income - 405100)
     print('Сумма годового налога составит: ', tax)
-elif seventh < annual_income:
-    tax = 0.10 * second + 0.15 * (third - second) + 0.25 * (fourth - third) + 0.28 * (fifth - fourth) + 0.33 * (
-                    405101 - fifth) + 0.35 * (seventh - 405101) + 0.396 * (annual_income - seventh)
+elif sev < annual_income:
+    tax = 0.10 * sec + 0.15 * (thi - sec) + 0.25 * (fou - thi) + 0.28 * (fif - fou) + 0.33 * \
+          (405100 - fif) + 0.35 * (sev - 405100) + 0.396 * (annual_income - sev)
     print('Сумма годового налога составит: ', tax)
