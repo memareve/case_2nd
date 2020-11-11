@@ -22,83 +22,48 @@ if not('одинсубъект' or 'супружескаяпара' or 'роди
 # income without tax deduction
 annual_income = annual_income - tax_deduction
 
-# tax for a single entity
+# constants for the stage of the tax
 if subject_of_taxation == 'одинсубъект':
-    if 0 <= annual_income <= 9075:
-        tax = 0.1 * (annual_income - 0)
-        print('Сумма годового налога составит: ', tax)
-    elif 9076 <= annual_income <= 36900:
-        tax = 0.1 * (9076 - 0) + 0.15 * (annual_income - 9076)
-        print('Сумма годового налога составит: ', tax)
-    elif 36901 <= annual_income <= 89350:
-        tax = 0.1 * (9076 - 0) + 0.15 * (36901 - 9076) + 0.25 * (annual_income - 36901)
-        print('Сумма годового налога составит: ', tax)
-    elif 89351 <= annual_income <= 186350:
-        tax = 0.1 * (9076 - 0) + 0.15 * (36901 - 9076) + 0.25 * (89351 - 36901) + 0.28 * (annual_income - 89351)
-        print('Сумма годового налога составит: ', tax)
-    elif 186351 <= annual_income <= 405100:
-        tax = 0.1 * (9076 - 0) + 0.15 * (36901 - 9076) + 0.25 * (89351 - 36901) + 0.28 * (186351 - 89351) + 0.33 * (
-                    annual_income - 186351)
-        print('Сумма годового налога составит: ', tax)
-    elif 405101 <= annual_income <= 406750:
-        tax = 0.1 * (9076 - 0) + 0.15 * (36901 - 9076) + 0.25 * (89351 - 36901) + 0.28 * (186351 - 89351) + 0.33 * (
-                    405101 - 186351) + 0.35 * (annual_income - 405101)
-        print('Сумма годового налога составит: ', tax)
-    elif annual_income >= 406751:
-        tax = 0.1 * (9076 - 0) + 0.15 * (36901 - 9076) + 0.25 * (89351 - 36901) + 0.28 * (186351 - 89351) + 0.33 * (
-                    405101 - 186351) + 0.35 * (406751 - 405101) + 0.396 * (annual_income - 406751)
-        print('Сумма годового налога составит: ', tax)
-
-# tax for a married couple
+    second = 9076
+    third = 36901
+    fourth = 89351
+    fifth = 186351
+    seventh = 406751
 elif subject_of_taxation == 'супружескаяпара':
-    if 0 <= annual_income <= 18150:
-        tax = 0.1 * (annual_income - 0)
-        print('Сумма годового налога составит: ', tax)
-    elif 18151 <= annual_income <= 73800:
-        tax = 0.1 * (18151 - 0) + 0.15 * (annual_income - 18151)
-        print('Сумма годового налога составит: ', tax)
-    elif 73801 <= annual_income <= 148850:
-        tax = 0.1 * (18151 - 0) + 0.15 * (73801 - 18151) + 0.25 * (annual_income - 73801)
-        print('Сумма годового налога составит: ', tax)
-    elif 148851 <= annual_income <= 226850:
-        tax = 0.1 * (18151 - 0) + 0.15 * (73801 - 18151) + 0.25 * (148851 - 73801) + 0.28 * (annual_income - 148851)
-        print('Сумма годового налога составит: ', tax)
-    elif 226851 <= annual_income <= 405100:
-        tax = 0.1 * (18151 - 0) + 0.15 * (73801 - 18151) + 0.25 * (148851 - 73801) + 0.28 * (226851 - 148851) + 0.33 * (
-                annual_income - 226851)
-        print('Сумма годового налога составит: ', tax)
-    elif 405101 <= annual_income <= 457600:
-        tax = 0.1 * (18151 - 0) + 0.15 * (73801 - 18151) + 0.25 * (148851 - 73801) + 0.28 * (226851 - 148851) + 0.33 * (
-                405101 - 226851) + 0.35 * (annual_income - 405101)
-        print('Сумма годового налога составит: ', tax)
-    elif annual_income >= 457601:
-        tax = 0.1 * (18151 - 0) + 0.15 * (73801 - 18151) + 0.25 * (148851 - 73801) + 0.28 * (226851 - 148851) + 0.33 * (
-                405101 - 226851) + 0.35 * (457601 - 405101) + 0.396 * (annual_income - 457601)
-        print('Сумма годового налога составит: ', tax)
-
-# tax for single parent
+    second = 18151
+    third = 73801
+    fourth = 148851
+    fifth = 226851
+    seventh = 457601
 elif subject_of_taxation == 'родитель-одиночка' or subject_of_taxation == 'родительодиночка':
-    if 0 <= annual_income <= 12950:
-        tax = 0.1 * (annual_income - 0)
-        print('Сумма годового налога составит: ', tax)
-    elif 12951 <= annual_income <= 49400:
-        tax = 0.1 * (12951 - 0) + 0.15 * (annual_income - 12951)
-        print('Сумма годового налога составит: ', tax)
-    elif 49401 <= annual_income <= 127550:
-        tax = 0.1 * (12951 - 0) + 0.15 * (49401 - 12951) + 0.25 * (annual_income - 49401)
-        print('Сумма годового налога составит: ', tax)
-    elif 127551 <= annual_income <= 206600:
-        tax = 0.1 * (12951 - 0) + 0.15 * (49401 - 12951) + 0.25 * (127551 - 49401) + 0.28 * (annual_income - 127551)
-        print('Сумма годового налога составит: ', tax)
-    elif 206601 <= annual_income <= 405100:
-        tax = 0.1 * (12951 - 0) + 0.15 * (49401 - 12951) + 0.25 * (127551 - 49401) + 0.28 * (206601 - 127551) + 0.33 * (
-                annual_income - 206601)
-        print('Сумма годового налога составит: ', tax)
-    elif 405101 <= annual_income <= 432200:
-        tax = 0.1 * (12951 - 0) + 0.15 * (49401 - 12951) + 0.25 * (127551 - 49401) + 0.28 * (206601 - 127551) + 0.33 * (
-                405101 - 206601) + 0.35 * (annual_income - 405101)
-        print('Сумма годового налога составит: ', tax)
-    elif annual_income >= 432201:
-        tax = 0.1 * (12951 - 0) + 0.15 * (49401 - 12951) + 0.25 * (127551 - 49401) + 0.28 * (206601 - 127551) + 0.33 * (
-                405101 - 206601) + 0.35 * (432201 - 405101) + 0.396 * (annual_income - 432201)
-        print('Сумма годового налога составит: ', tax)
+    second = 12951
+    third = 49401
+    fourth = 127551
+    fifth = 206601
+    seventh = 432201
+
+# main
+if 0 <= annual_income <= (second - 1):
+    tax = 0.10 * (annual_income - 0)
+    print('Сумма годового налога составит: ', tax)
+elif second <= annual_income <= (third - 1):
+    tax = 0.10 * (second - 0) + 0.15 * (annual_income - second)
+    print('Сумма годового налога составит: ', tax)
+elif third <= annual_income <= (fourth - 1):
+    tax = 0.10 * (second - 0) + 0.15 * (third - second) + 0.25 * (annual_income - third)
+    print('Сумма годового налога составит: ', tax)
+elif fourth <= annual_income <= (fifth - 1):
+    tax = 0.10 * (second - 0) + 0.15 * (third - second) + 0.25 * (fourth - third) + 0.28 * (annual_income - fourth)
+    print('Сумма годового налога составит: ', tax)
+elif fifth <= annual_income <= 405100:
+    tax = 0.10 * (second - 0) + 0.15 * (third - second) + 0.25 * (fourth - third) + 0.28 * (fifth - fourth) + 0.33 * (
+            annual_income - fifth)
+    print('Сумма годового налога составит: ', tax)
+elif 405101 <= annual_income <= (seventh - 1):
+    tax = 0.10 * (second - 0) + 0.15 * (third - second) + 0.25 * (fourth - third) + 0.28 * (fifth - fourth) + 0.33 * (
+                    405101 - fifth) + 0.35 * (annual_income - 405101)
+    print('Сумма годового налога составит: ', tax)
+elif seventh <= annual_income:
+    tax = 0.10 * (second - 0) + 0.15 * (third - second) + 0.25 * (fourth - third) + 0.28 * (fifth - fourth) + 0.33 * (
+                    405101 - fifth) + 0.35 * (seventh - 405101) + 0.396 * (annual_income - seventh)
+    print('Сумма годового налога составит: ', tax)
