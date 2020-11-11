@@ -1,7 +1,7 @@
 # Case-study #2
 # Developers: Marinkin O. (33,33333333333333%),
 # Seledtsov A. (33,33333333333333%),
-# Evdischenko M. (33,33333333333333%).
+# Evdischenko M. (53,33333333333333%).
 
 # calculating_annual_income
 name_month = ['январе', 'феврале', 'марте', 'апреле', 'мае', 'июне', 'июле', 'августе', 'сентябре', 'октябре', 'ноябре',
