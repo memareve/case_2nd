@@ -2,7 +2,7 @@
 Case-study #2
 Developers:
 Marinkin O. (33,33333333333333%),
-Seledtsov A. (33,33333333333333%),
+Seledtsov A. (43,33333333333333%),
 Evdischenko M. (53,33333333333333%).
 """
 
